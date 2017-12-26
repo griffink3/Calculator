@@ -7,7 +7,6 @@ TODO:
 
 (function() {
   "use strict";
-
   // Shortcut to get elements
   var el = function(element) {
     if (element.charAt(0) === "#") { // If passed an ID...
@@ -24,7 +23,7 @@ TODO:
     theNum = "", // Current number
     oldNum = "", // First number
     resultNum, // Result
-    operator; // Batman
+    operator; // Operation performed
 
   // When: Number is clicked. Get the current number selected
   var setNum = function() {
@@ -34,9 +33,7 @@ TODO:
     } else { // Otherwise, add digit to previous number (this is a string!)
       theNum += this.getAttribute("data-val");
     }
-
     viewer.innerHTML = theNum; // Display current number
-
   };
 
   // When: Operator is clicked. Pass number to oldNum and save operator
@@ -57,19 +54,19 @@ TODO:
 
     // Perform operation
     switch (operator) {
-      case "plus":
+      case "add":
         resultNum = oldNum + theNum;
         break;
 
-      case "minus":
+      case "sub":
         resultNum = oldNum - theNum;
         break;
 
-      case "times":
+      case "mult":
         resultNum = oldNum * theNum;
         break;
 
-      case "divided by":
+      case "div":
         resultNum = oldNum / theNum;
         break;
 
